@@ -1,0 +1,11 @@
+<?php $info = $block->getInfo(); ?>
+<?php if (!empty($info)) : ?>
+    <dl class="info-list">
+        <?php foreach ($info as $key => $value) : ?>
+            <dt><?php echo $block->escapeHtml($key); ?>:</dt>
+            <dd><?php echo $this->escapeHtml($value); ?></dd>
+        <?php endforeach; ?>
+    </dl>
+<?php else : ?>
+    No info
+<?php endif; ?>

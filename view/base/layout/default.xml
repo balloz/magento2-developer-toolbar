@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Balloz_DeveloperToolbar::css/toolbar.css" />
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Balloz\DeveloperToolbar\Block\Toolbar" name="balloz.toolbar" template="Balloz_DeveloperToolbar::toolbar.phtml" />
+        </referenceContainer>
+
+        <referenceBlock name="balloz.toolbar">
+            <block class="Balloz\DeveloperToolbar\Block\Panel\Info" name="balloz.toolbar.panels.info" template="Balloz_DeveloperToolbar::panels/info.phtml" />
+            <block class="Balloz\DeveloperToolbar\Block\Panel\Layout" name="balloz.toolbar.panels.layout" template="Balloz_DeveloperToolbar::panels/layout.phtml" />
+            <block class="Balloz\DeveloperToolbar\Block\Panel\Handles" name="balloz.toolbar.panels.handles" template="Balloz_DeveloperToolbar::panels/handles.phtml" />
+            <block class="Balloz\DeveloperToolbar\Block\Panel\Queries" name="balloz.toolbar.panels.queries" template="Balloz_DeveloperToolbar::panels/queries.phtml" />
+        </referenceBlock>
+    </body>
+</page>

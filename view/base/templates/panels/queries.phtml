@@ -1,0 +1,24 @@
+<?php foreach ($block->getQueries() as $connection => $queries) : ?>
+    <h1><?php echo $connection; ?> (<?php echo count($queries); ?> queries, total duration of <?php echo $block->sumDurations($queries); ?>ms)</h1>
+
+    <table class="queries">
+        <thead>
+        <tr>
+            <th class="query">Query</th>
+            <th class="duration">Duration</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($queries as $query) : ?>
+            <tr>
+                <td class="query">
+                    <?php echo $block->escapeHtml($query->getQuery()); ?>
+                </td>
+                <td class="duration">
+                    <?php echo $block->prettyInterval($query->getElapsedSecs() * 1000); ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endforeach; ?>

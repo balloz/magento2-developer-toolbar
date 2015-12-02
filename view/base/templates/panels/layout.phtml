@@ -1,0 +1,10 @@
+<?php foreach ($block->getEntries() as $entry) : ?>
+<div style="padding-left: <?php echo $entry['level'] * 20; ?>px;">
+    <span class="entry-<?php echo $entry['type']; ?>">
+        <?php echo $entry['alias']; ?> (<?php echo $entry['name']; ?>)
+    </span>
+    <?php if ($entry['extra']) : ?>
+    (<?php echo $this->formatExtra($entry['extra']); ?>)
+    <?php endif; ?>
+</div>
+<?php endforeach; ?>

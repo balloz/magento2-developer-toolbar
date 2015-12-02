@@ -1,0 +1,20 @@
+{
+    "name": "balloz/magento2-developer-toolbar",
+    "description": "Magento 2 developer toolbar",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Bas Mostert",
+            "email": "b.mostert@balloz.nl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Balloz\\DeveloperToolbar\\": ""
+        }
+    }
+}

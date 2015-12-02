@@ -1,0 +1,16 @@
+<div class="balloz-toolbar" data-mage-init='{"developerToolbar": {}}'>
+    <a href="#" class="balloz-toolbar-min balloz-toolbar-min-left">Move left</a>
+    <div class="balloz-toolbar-panels-container">
+        <?php foreach ($block->getPanels() as $index => $panel) : ?>
+            <div class="balloz-toolbar-panel balloz-toolbar-panel-<?php echo $panel->getIdentifier(); ?>">
+                <div class="balloz-toolbar-panel-label">
+                    <a href="#balloz-toolbar-panel-<?php echo $index; ?>"><?php echo $block->escapeHtml($panel->getName()); ?></a>
+                </div>
+                <div class="balloz-toolbar-panel-content balloz-toolbar-panel-content-<?php echo $panel->getIdentifier(); ?>" id="balloz-toolbar-panel-<?php echo $index; ?>">
+                    <?php echo $panel->toHtml(); ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <a href="#" class="balloz-toolbar-min balloz-toolbar-min-right">Move right</a>
+</div>
