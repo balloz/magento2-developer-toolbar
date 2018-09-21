@@ -38,7 +38,9 @@ class Layout extends Template implements PanelInterface
                 'htmlId' => isset($block['htmlId']) ? $block['htmlId'] : '',
                 'htmlClass' => isset($block['htmlClass']) ? $block['htmlClass'] : '',
                 'template' => $instance ? $instance->getTemplate() : ''
-            ])
+            ]),
+            'queryCount' => $instance ? $instance->getData('__query_count') : 0,
+            'duration' => $instance ? $instance->getData('__render_time') : 0
         ];
 
         if (isset($block['children'])) {
@@ -75,5 +77,15 @@ class Layout extends Template implements PanelInterface
         }
 
         return implode(', ', $parts);
+    }
+
+    public function colorInterval($interval) {
+        if ($interval < 5) {
+            return 'interval-green';
+        } elseif ($interval < 10) {
+            return 'interval-yellow';
+        } else {
+            return 'interval-red';
+        }
     }
 }

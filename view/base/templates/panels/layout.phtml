@@ -6,5 +6,10 @@
     <?php if ($entry['extra']) : ?>
     (<?php echo $this->formatExtra($entry['extra']); ?>)
     <?php endif; ?>
+    | <?php echo $entry['queryCount']; ?> queries
+    <?php if (isset($entry['duration'])) : ?>
+    | <span class="time <?php echo $this->colorInterval($entry['duration']); ?>"><?php echo number_format($entry['duration'], 2); ?>ms</span>
+    <?php endif; ?>
+
 </div>
 <?php endforeach; ?>
