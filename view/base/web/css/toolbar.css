@@ -142,18 +142,15 @@
 .balloz-toolbar .balloz-toolbar-panel-content-layout .entry-block {
     color: white;
 }
-.balloz-toolbar .balloz-toolbar-panel-content-layout .time {
-    color: #00ffff;
-}
 
 /* === Timer interval related styling === */
-.balloz-toolbar .time.interval-green {
+.balloz-toolbar .color-green {
     color: #00ff00;
 }
-.balloz-toolbar .time.interval-yellow {
+.balloz-toolbar .color-yellow {
     color: #ffff00;
 }
-.balloz-toolbar .time.interval-red {
+.balloz-toolbar .color-red {
     color: #ff0000;
 }
 

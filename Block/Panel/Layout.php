@@ -40,7 +40,8 @@ class Layout extends Template implements PanelInterface
                 'template' => $instance ? $instance->getTemplate() : ''
             ]),
             'queryCount' => $instance ? $instance->getData('__query_count') : 0,
-            'duration' => $instance ? $instance->getData('__render_time') : 0
+            'duration' => $instance ? $instance->getData('__render_time') : 0,
+            'cached' => $instance ? $instance->getData('__served_from_cache') : false
         ];
 
         if (isset($block['children'])) {
@@ -81,11 +82,11 @@ class Layout extends Template implements PanelInterface
 
     public function colorInterval($interval) {
         if ($interval < 5) {
-            return 'interval-green';
+            return 'color-green';
         } elseif ($interval < 10) {
-            return 'interval-yellow';
+            return 'color-yellow';
         } else {
-            return 'interval-red';
+            return 'color-red';
         }
     }
 }
