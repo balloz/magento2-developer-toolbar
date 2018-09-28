@@ -6,7 +6,12 @@
     <?php if ($entry['extra']) : ?>
     (<?php echo $this->formatExtra($entry['extra']); ?>)
     <?php endif; ?>
-    | <?php echo $entry['queryCount']; ?> queries
+    |
+    <?php if ($entry['queryCount'] > 0) : ?>
+    <span class="color-turquoise"><?php echo $entry['queryCount']; ?> queries [<?php echo $entry['queryStartIndex']; ?>-<?php echo $entry['queryEndIndex']; ?>]</span>
+    <?php else : ?>
+    <span><?php echo $entry['queryCount']; ?> queries</span>
+    <?php endif; ?>
     <?php if (isset($entry['duration'])) : ?>
     | <span class="time <?php echo $this->colorInterval($entry['duration']); ?>"><?php echo number_format($entry['duration'], 2); ?>ms</span>
     <?php endif; ?>
@@ -14,7 +19,13 @@
     <?php if ($entry['cached']) : ?>
     <span class="color-green">cached</span>
     <?php else : ?>
-    <span class="color-red">not cached</span>
+    <span>not cached</span>
+    <?php endif; ?>
+    |
+    <?php if ($entry['cacheLifetime'] !== false) : ?>
+    <?php echo $entry['cacheLifetime']; ?> seconds
+    <?php else : ?>
+    no cache lifetime
     <?php endif; ?>
 </div>
 <?php endforeach; ?>

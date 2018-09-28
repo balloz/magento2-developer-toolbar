@@ -4,13 +4,17 @@
     <table class="queries">
         <thead>
         <tr>
+            <th class="index">Index</th>
             <th class="query">Query</th>
             <th class="duration">Duration</th>
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($queries as $query) : ?>
+        <?php foreach ($queries as $index => $query) : ?>
             <tr>
+                <td class="index">
+                    <?php echo $index + 1; ?>.
+                </td>
                 <td class="query">
                     <?php echo $block->escapeHtml($query->getQuery()); ?>
                 </td>

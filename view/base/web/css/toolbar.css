@@ -153,6 +153,9 @@
 .balloz-toolbar .color-red {
     color: #ff0000;
 }
+.balloz-toolbar .color-turquoise {
+    color: #40e0d0;
+}
 
 /* === Timers panel === */
 .balloz-toolbar .balloz-toolbar-panel-timers a {

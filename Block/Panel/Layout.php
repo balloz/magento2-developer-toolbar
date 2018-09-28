@@ -40,8 +40,11 @@ class Layout extends Template implements PanelInterface
                 'template' => $instance ? $instance->getTemplate() : ''
             ]),
             'queryCount' => $instance ? $instance->getData('__query_count') : 0,
+            'queryStartIndex' => $instance ? $instance->getData('__query_index_start') : false,
+            'queryEndIndex' => $instance ? $instance->getData('__query_index_end') : false,
             'duration' => $instance ? $instance->getData('__render_time') : 0,
-            'cached' => $instance ? $instance->getData('__served_from_cache') : false
+            'cached' => $instance ? $instance->getData('__served_from_cache') : false,
+            'cacheLifetime' => $instance && $instance->getData('__cache_lifetime') !== null ? $instance->getData('__cache_lifetime') : false
         ];
 
         if (isset($block['children'])) {
