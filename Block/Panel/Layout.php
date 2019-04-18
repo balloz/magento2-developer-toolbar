@@ -25,6 +25,12 @@ class Layout extends Template implements PanelInterface
 
         $instance = $layout->getBlock($name);
 
+        if ($instance && ($blockClass = get_class($instance)) && substr($blockClass, -11) == 'Interceptor') {
+            $blockClass = get_parent_class($instance);
+        } else {
+            $blockClass = '';
+        }
+
         $block = $structure[$name];
         $entries = [];
         $entries[] = [
@@ -34,6 +40,7 @@ class Layout extends Template implements PanelInterface
             'type' => $block['type'],
             'label' => isset($block['label']) ? $block['label'] : '',
             'extra' => array_filter([
+                'blockClass' => $blockClass,
                 'htmlTag' => isset($block['htmlTag']) ? $block['htmlTag'] : '',
                 'htmlId' => isset($block['htmlId']) ? $block['htmlId'] : '',
                 'htmlClass' => isset($block['htmlClass']) ? $block['htmlClass'] : '',
