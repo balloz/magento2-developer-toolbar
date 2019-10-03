@@ -13,6 +13,7 @@
             <block class="Balloz\DeveloperToolbar\Block\Panel\Layout" name="balloz.toolbar.panels.layout" template="Balloz_DeveloperToolbar::panels/layout.phtml" />
             <block class="Balloz\DeveloperToolbar\Block\Panel\Handles" name="balloz.toolbar.panels.handles" template="Balloz_DeveloperToolbar::panels/handles.phtml" />
             <block class="Balloz\DeveloperToolbar\Block\Panel\Queries" name="balloz.toolbar.panels.queries" template="Balloz_DeveloperToolbar::panels/queries.phtml" />
+            <block class="Balloz\DeveloperToolbar\Block\Panel\Fpc" name="balloz.toolbar.panels.fpc" template="Balloz_DeveloperToolbar::panels/fpc.phtml" />
         </referenceBlock>
     </body>
 </page>

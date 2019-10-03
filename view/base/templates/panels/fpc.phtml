@@ -1,0 +1,16 @@
+<?php $uncacheables = $block->getUncacheables(); ?>
+<p>
+    Is page FPC cacheable: <?php echo $block->isFpcCacheable() ? 'Yes': 'No'; ?>
+</p>
+<?php if (!empty($uncacheables)) : ?>
+<p>
+    The following <?php echo count($uncacheables); ?> block(s) are preventing FPC from working correctly due to cacheable="false":
+</p>
+<?php foreach ($uncacheables as $uncacheable) : ?>
+<div class="boxed">
+    <pre><?php echo $block->escapeHtml(trim($uncacheable->asXML())); ?></pre>
+</div>
+<?php endforeach; ?>
+<?php else : ?>
+    All blocks are cacheable on this page. FPC should work well!
+<?php endif; ?>
