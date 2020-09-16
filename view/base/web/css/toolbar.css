@@ -258,3 +258,23 @@
     background-color: #000;
     color: #fff;
 }
+
+/* === Console panel === */
+.balloz-toolbar .balloz-toolbar-panel-console a {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGfSURBVDjLpVOxSgNBEJ297B2iiUmToKABCxEVKyGVoJ+QLp1RxE4sRAQL26RVsLHRQouAkMoq/yD5Ads0ErDIQe5udu+c2eTCGU4MuPCYmbvZN292d0QURfCfJZ9eXh9WV5aPpW3bUQigQg0YKFBKQcAgP0AE38eRDcgShp6HX/3PS0mbT5dumyJ/+A5HmQ24337+s6oQAIXFrN28e1yXUjqifHYO9uYHXIgyFGR2JukL83OACoVEreDg6ppYRSosyzKYjhlrO3sgozCETCYD/X7/R1LahmRcLBYhny+ApVQ4kdVut6HRaMx8A0iHbGmtgS7AoFarQaVSgWq1amLHcSb/kqCDMzbAAGSAynxgtFot6Ha70Ol0TMK07GRb3Db6PkiWEVer1+smgeM4kdf0GZgHRAWVGiuIZSUPMFkxLWYFih6WxHELcdVpklgBx0mfLTIBP09mY4LRK0uvGCMm4T2+IgLXdQekIFcqlVKTfyNh6/ueJ3u93s3W7v4J8eYCzUNEw4SjYeIelUbja/KRrlxT1VBzDg68ofsm/jvO35HitdVS/1ysAAAAAElFTkSuQmCC);
+}
+.balloz-toolbar .balloz-toolbar-panel-content-console {
+    width: 1200px;
+    height: 1000px;
+    background-color: #000;
+    color: #fff;
+    font-family: monospace;
+    overflow: auto;
+}
+.balloz-toolbar .balloz-toolbar-panel-content-console .console-entry {
+    padding: 0 5px;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #fff;
+    background-color: #000;
+}

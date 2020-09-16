@@ -1,0 +1,8 @@
+<?php $entries = $block->getEntries(); ?>
+<?php if (!empty($entries)) : ?>
+<?php foreach ($entries as $entry) : ?>
+<pre class="console-entry"><?= $block->escapeHtml($entry); ?></pre>
+<?php endforeach; ?>
+<?php else : ?>
+<p>No console entries were logged.</p>
+<?php endif; ?>
